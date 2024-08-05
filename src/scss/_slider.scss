@@ -1,0 +1,120 @@
+/* Слайдер */
+.slick-slider{}
+
+/* Слайдер запущений */
+.slick-slider.slick-initialized{}
+
+/* Слайдер з крапками */
+.slick-slider.slick-dotted{}
+
+/* Обмежувальна оболонка */
+.slick-list {
+  overflow: hidden;
+}
+
+/* Стрічка слайдів */
+.slick-track{
+  display: flex;
+}
+
+/* Слайд */
+.slick-slide{}
+
+/* Слайд активний (показується) */
+.slick-slide.slick-active{}
+
+/* Слайд основний */
+.slick-slide.slick-current{}
+
+/* Слайд по центру */
+.slick-slide.slick-center{}
+
+/* Клонований слайд */
+.slick-slide.slick-cloned{}
+
+/* Стрілка */
+.slick-arrow{}
+
+/* Стрілка вліво */
+.slick-arrow.slick-prev{}
+
+/* Стрілка вправо */
+.slick-arrow.slick-next{}
+
+/* Стрілка не активна */
+.slick-arrow.slick-disabled{}
+
+/* Точки (буліти) */
+.slick-dots{}
+
+.slick-dots li{}
+
+/* Активна точка */
+.slick-dots li.slick-active{}
+
+/* Елемент точки */
+.slick-dots li button{}
+
+
+/* Slider_MAIN */
+.slider {
+  position: relative;
+  .slick-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    font-size: 0;
+    width: 30px;
+    height: 64px;
+    &.slick-prev{
+      left: 20px;
+      background: url("./image/svg/left-arrow.svg") 0 0 / 100% no-repeat;
+    }
+    &.slick-next{
+      right: 20px;
+      background: url("./image/svg/right-arrow.svg") 0 0 / 100% no-repeat;
+    }
+  }
+  /* Точки (буліти) */
+  .slick-dots{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    li{
+      list-style: none;
+      &.slick-active {
+        button{
+          font-size: 0;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #fff;
+        }
+      }
+      button{
+        font-size: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #666666;
+      }
+    }
+  }
+  .slider__item{
+    height: 500px;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      object-fit: cover;
+    }
+  }
+}

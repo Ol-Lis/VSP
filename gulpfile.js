@@ -36,7 +36,7 @@ function clear() {
 }
 
 function tailwind(cb) {
-  exec('npx tailwindcss -i ./src/scss/input.css -o ./src/scss/output.css', function (err, stdout, stderr) {
+  exec('npx tailwindcss -i ./src/scss/_input.scss -o ./src/scss/_output.scss', function (err, stdout, stderr) {
     console.log(stdout);
     console.error(stderr);
     cb(err);
@@ -44,11 +44,8 @@ function tailwind(cb) {
 }
 
 function copyfolder() {
-  return src('./slink/**/*')  // Вибирає всі файли та папки в папці src/slink
-    .pipe(dest('build/slink'))  // Копіює їх у папку build/slink
-    .on('error', function(err) {
-      console.error('Error:', err.toString());
-    });
+  return gulp.src('./src/js/**/*') 
+    .pipe(gulp.dest('./build/js'));
   }
 
 function copy() {
@@ -60,12 +57,12 @@ function copy() {
 
 function watching() {
   gulp.watch("./src/scss/**/*.scss", css);
-  gulp.watch("./src/*.html", html).on('change', browserSync.reload);
-  gulp.watch('./src/input.css', tailwind).on('change', browserSync.reload);
+  gulp.watch("./src/*.html", html).on('change', browserSync.reload)
+  gulp.watch('./src/_input.scss', tailwind ).on('change', browserSync.reload);
 }
 
 function tailwindWatch() {
-  exec('npx tailwindcss -i ./src/scss/input.css -o ./src/scss/output.css --watch', function (err, stdout, stderr) {
+  exec('npx tailwindcss -i ./src/scss/_input.scss -o ./src/scss/_output.scss --watch', function (err, stdout, stderr) {
     console.log(stdout);
     console.error(stderr);
   });
@@ -87,11 +84,13 @@ function defaultTask(cb) {
 exports.default = defaultTask;
 exports.css = css;
 exports.clear = clear;
+exports.copyfolder = copyfolder;
 exports.build = gulp.series(
   clear,
   gulp.parallel(css, html, copy, tailwind),
 );
+
 exports.start = gulp.series(
 clear,
-gulp.parallel(css, html, js, copy, tailwind),
+gulp.parallel(css, html, copyfolder, copy, tailwind),
 gulp.parallel(watching, tailwindWatch,  server));
