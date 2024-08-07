@@ -141,24 +141,3 @@
       object-fit: cover;
     }
   }
-
-
-/* Slider_MAIN-mini-img */
-
-.slider-min-img{
-  display: flex;
-  gap: 25px;
-  // position: relative;
-  .slider__item{
-    height: 50px;
-    width: 110px;
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      justify-content: center;
-      align-items: center;
-      object-fit: cover;
-    }
-  }
-}
