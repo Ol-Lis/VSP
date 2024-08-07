@@ -92,5 +92,5 @@ exports.build = gulp.series(
 
 exports.start = gulp.series(
 clear,
-gulp.parallel(js, css, html, copyfolder, copy, tailwind),
+gulp.parallel( css, html, copyfolder, copy, tailwind),
 gulp.parallel(watching, tailwindWatch,  server));
