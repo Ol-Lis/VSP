@@ -637,10 +637,6 @@ video {
   margin-top: 2.5rem;
 }
 
-.inline {
-  display: inline;
-}
-
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -649,10 +645,6 @@ video {
 
 .h-2 {
   height: 0.5rem;
-}
-
-.max-h-\[120px\] {
-  max-height: 120px;
 }
 
 .max-h-full {
@@ -734,6 +726,18 @@ video {
 
 .text-3xl {
   font-size: 1.953rem;
+}
+
+.text-\[12px\] {
+  font-size: 12px;
+}
+
+.text-\[14px\] {
+  font-size: 14px;
+}
+
+.text-\[28px\] {
+  font-size: 28px;
 }
 
 .text-base {
