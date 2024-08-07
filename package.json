@@ -23,7 +23,7 @@
     "gulp-csso": "^4.0.1",
     "gulp-sass": "^5.1.0",
     "sass": "^1.77.8",
-    "tailwindcss": "^3.4.7"
+    "tailwindcss": "^3.4.8"
   },
   "dependencies": {
     "autoprefixer": "^10.4.19",
