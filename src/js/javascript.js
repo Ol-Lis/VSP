@@ -3,7 +3,7 @@ $(document).ready(function(){
     autoplay: true,
     autoplaySpeed: 1500,
     infinity: true,
-    speed: 2000,
+    speed: 1000,
     // adaptiveHeight: true,
     easing: "ease",
     dots:true,
