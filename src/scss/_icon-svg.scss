@@ -1,0 +1,17 @@
+
+.svg-icon-down-arrow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+}
+#svg-icon-down-arrow{
+  fill: #363635;
+  width: 8px;
+  height: 6px;
+  & use {
+    width: 100%;
+    height: auto;
+  }
+}

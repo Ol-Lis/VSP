@@ -7,9 +7,30 @@
 }
 
 .nav-hover{
-    &:hover img{
+    &:hover #svg-icon-down-arrow{
         transform: rotate(180deg) translateY(-1px);
-        filter: brightness(0) saturate(100%) invert(32%) sepia(82%)
-        saturate(2499%) hue-rotate(198deg) brightness(103%) contrast(99%);
+        fill: #079F5D;
+    }
+}
+
+.nav-list-lv-2{
+    position: absolute;
+    left: -17px;
+    top: 58px;
+    display: none;
+    flex-direction: column;
+    padding: 8px;
+    border: 1px solid var(--08, #E2E2E2);
+    background: #FFF;
+    border-radius: 12px;
+    z-index: 5;
+}
+.item-list-lv-2{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    border-radius: 5px;
+    &:hover{
+        background: var(--09, #F8F8F8);
     }
 }
